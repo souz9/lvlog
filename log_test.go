@@ -11,7 +11,7 @@ import (
 func TestLog(t *testing.T) {
 	b := bytes.Buffer{}
 
-	error.SetOutput(&b)
+	error_.SetOutput(&b)
 
 	t.Run("Error", func(t *testing.T) {
 		b.Reset()
@@ -69,7 +69,7 @@ func TestLog(t *testing.T) {
 }
 
 func BenchmarkLog(b *testing.B) {
-	error.SetOutput(ioutil.Discard)
+	error_.SetOutput(ioutil.Discard)
 
 	b.Run("log", func(b *testing.B) {
 		for n := 0; n < b.N; n++ {
